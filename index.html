@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="gradient-bg">
+            <div class="gradient-circle circle-1"></div>
+            <div class="gradient-circle circle-2"></div>
+            <div class="gradient-circle circle-3"></div>
+        </div>
+
+        <div class="calculator-card">
+            <div class="header">
+                <h1 class="title">
+                    <span class="text">Scientific Calculator</span>
+                </h1>
+            </div>
+            <div class="display-container">
+                <div class="history" id="history"></div>
+                <div class="display" id="display">0</div>
+                <div class="memory-indicator" id="memoryIndicator"></div>
+            </div>
+
+            <div class="mode-indicator">
+                <span class="mode-badge" id="modeBadge">DEG</span>
+                <span class="mode-badge" id="invBadge" style="opacity: 0.5">INV</span>
+                <span class="mode-badge" id="hypBadge" style="opacity: 0.5">HYP</span>
+            </div>
+
+            <div class="button-grid">
+                <button class="btn scientific" onclick="appendFunction('sin(')">sin</button>
+                <button class="btn scientific" onclick="appendFunction('cos(')">cos</button>
+                <button class="btn scientific" onclick="appendFunction('tan(')">tan</button>
+                <button class="btn scientific" onclick="appendFunction('log(')">log</button>
+                <button class="btn scientific" onclick="appendFunction('ln(')">ln</button>
+                <button class="btn function" onclick="toggleInv()" id="invBtn">inv</button>
+
+                <button class="btn scientific" onclick="appendFunction('asin(')">invsin</button>
+                <button class="btn scientific" onclick="appendFunction('acos(')">invcos</button>
+                <button class="btn scientific" onclick="appendFunction('atan(')">invtan</button>
+                <button class="btn scientific" onclick="appendFunction('10^')">10^x</button>
+                <button class="btn scientific" onclick="appendFunction('e^')">e^x</button>
+                <button class="btn function" onclick="toggleHyp()" id="hypBtn">hyp</button>
+
+                <button class="btn scientific" onclick="appendFunction('sinh(')">sinh</button>
+                <button class="btn scientific" onclick="appendFunction('cosh(')">cosh</button>
+                <button class="btn scientific" onclick="appendFunction('tanh(')">tanh</button>
+                <button class="btn scientific" onclick="append('√(')">√</button>
+                <button class="btn scientific" onclick="append('^')">xʸ</button>
+                <button class="btn function" onclick="clearMemory()" id="mcBtn">MC</button>
+
+                <button class="btn scientific" onclick="append('π')">pi</button>
+                <button class="btn scientific" onclick="append('e')">e</button>
+                <button class="btn scientific" onclick="append('!')">x!</button>
+                <button class="btn scientific" onclick="append('(')">(</button>
+                <button class="btn scientific" onclick="append(')')">)</button>
+                <button class="btn function" onclick="memoryRecall()" id="mrBtn">MR</button>
+
+                <button class="btn function" onclick="memoryAdd()" id="mPlusBtn">M+</button>
+                <button class="btn function" onclick="memorySubtract()" id="mMinusBtn">M-</button>
+                <button class="btn function" onclick="memoryStore()" id="msBtn">MS</button>
+                <button class="btn operator" onclick="append('mod')">mod</button>
+                <button class="btn operator" onclick="append('%')">%</button>
+                <button class="btn function" onclick="clearEntry()" id="ceBtn">CE</button>
+
+                <button class="btn number" onclick="append('7')">7</button>
+                <button class="btn number" onclick="append('8')">8</button>
+                <button class="btn number" onclick="append('9')">9</button>
+                <button class="btn operator" onclick="append('/')">÷</button>
+                <button class="btn operator" onclick="append('*')">×</button>
+                <button class="btn function" onclick="clearAll()" id="cBtn">C</button>
+
+                <button class="btn number" onclick="append('4')">4</button>
+                <button class="btn number" onclick="append('5')">5</button>
+                <button class="btn number" onclick="append('6')">6</button>
+                <button class="btn operator" onclick="append('-')">−</button>
+                <button class="btn operator" onclick="append('+')">+</button>
+                <button class="btn function" onclick="backspace()" id="bsBtn">Cancel</button>
+
+                <button class="btn number" onclick="append('1')">1</button>
+                <button class="btn number" onclick="append('2')">2</button>
+                <button class="btn number" onclick="append('3')">3</button>
+                <button class="btn function" onclick="append('ans')">ANS</button>
+                <button class="btn equals" onclick="calculate()" colspan="2">=</button>
+                <button class="btn number zero" onclick="append('0')">0</button>
+                <button class="btn number" onclick="append('.')">.</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
